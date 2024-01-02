@@ -19,9 +19,12 @@ SELECT FLOOR(number1) as number1,
  CEILING(number2) as number2 FROM decimals;
 "Return a table with one column (mod) which is the output of number1 modulus number2."
 SELECT number1 % number2 AS mod FROM decimals;
-
-
-
+"The monsters in the provided table have too many characteristics, they really only need one each. Your job is to trim the characteristics down so that each monster only has one. If there is only one already, provide that. If there are multiple, provide only the first one (don't leave any commas in there)."
+SELECT id, name, SPLIT_PART(characteristics, ',', 1) AS characteristic
+FROM monsters
+ORDER BY id
+"Write a select statement to get a list of all students who haven't paid their tuition yet. The list should include all the data available about these students."
+ SELECT name,age,semester,mentor, tuition_received FROM students WHERE tuition_received= FALSE;
 
 
 
