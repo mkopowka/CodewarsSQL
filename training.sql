@@ -15,8 +15,8 @@ SELECT MIN(age) as age_min, MAX(age) as age_max FROM people;
 "Your task is to sort the information in the provided table 'companies' by number of employees (high to low). Returned table should be in the same format as provided:"
 SELECT * FROM companies ORDER BY employees DESC;
 "Return a table with two columns (number1, number2), the value in number1 should be rounded down and the value in number2 should be rounded up."
-SELECT FLOOR(number1) as number1,
- CEILING(number2) as number2 FROM decimals;
+SELECT FLOOR(number1) AS number1,
+ CEILING(number2) AS number2 FROM decimals;
 "Return a table with one column (mod) which is the output of number1 modulus number2."
 SELECT number1 % number2 AS mod FROM decimals;
 "The monsters in the provided table have too many characteristics, they really only need one each. Your job is to trim the characteristics down so that each monster only has one. If there is only one already, provide that. If there are multiple, provide only the first one (don't leave any commas in there)."
@@ -25,8 +25,8 @@ FROM monsters
 ORDER BY id
 "Write a select statement to get a list of all students who haven't paid their tuition yet. The list should include all the data available about these students."
  SELECT name,age,semester,mentor, tuition_received FROM students WHERE tuition_received= FALSE;
-
-
+"Please use SELECT statement and IN to filter out other origins. In the results show how many products are from United States of America and Canada respectively.Order by number of products, descending."
+SELECT country, COUNT(*) AS products FROM products WHERE country IN ('United States of America', 'Canada') GROUP BY country ORDER BY products DESC;
 
 
 
