@@ -27,6 +27,8 @@ ORDER BY id
  SELECT name,age,semester,mentor, tuition_received FROM students WHERE tuition_received= FALSE;
 "Please use SELECT statement and IN to filter out other origins. In the results show how many products are from United States of America and Canada respectively.Order by number of products, descending."
 SELECT country, COUNT(*) AS products FROM products WHERE country IN ('United States of America', 'Canada') GROUP BY country ORDER BY products DESC;
+"Please use Data Manipulation Language and not Data Definition Language to solve this Kata"
+Select 'hello world!' AS "Greeting"
 
 
 
