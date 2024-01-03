@@ -77,3 +77,32 @@ id
 name
 stock*/
 SELECT id,name,stock FROM products WHERE stock <=2 AND producent='CompanyA' ORDER BY stock ASC;
+/*For this challenge you need to create a simple SELECT statement that will return all columns from the people table, and join to the toys table so that you can return the COUNT of the toys
+
+people table schema
+id
+name
+toys table schema
+id
+name
+people_id
+You should return all people fields as well as the toy count as "toy_count".*/
+SELECT
+    people.*,
+    COUNT(toys.id) AS toy_count
+FROM
+    people
+LEFT JOIN
+    toys ON people.id = toys.people_id
+GROUP BY
+    people.id;
+/* You will need to create SELECT statement in conjunction with LIKE.
+Please list people which have first_name with at least 6 character long
+names table schema
+id
+first_name
+last_name
+results table schema
+first_name
+last_name */
+SELECT first_name,last_name FROM names WHERE first_name LIKE '______%'
