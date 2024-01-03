@@ -48,6 +48,17 @@ OR (quality1 = 'brave' AND quality2 <> 'evil')
 OR (quality1 = 'studious' OR quality2 = 'intelligent')
 OR (quality1 = 'hufflepuff' OR quality2 = 'hufflepuff')
 ORDER BY id ASC;
-
-
+/* You work at a book store. It's the end of the month, and you need to find out the 5 bestselling books at your store. Use a select statement to list names, authors, and number of copies sold of the 5 books which were sold most.
+books table schema
+name
+author
+copies_sold*/
+SELECT *
+FROM books
+ORDER BY copies_sold DESC
+LIMIT 5;
+/*You are given a table numbers with just one column, number. It holds some numbers that are already ordered.
+You need to write a query that makes them un-ordered, as in, every possible ordering should appear equally often. */
+SELECT number FROM numbers
+ORDER BY RANDOM();
 
