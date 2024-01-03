@@ -106,3 +106,7 @@ results table schema
 first_name
 last_name */
 SELECT first_name,last_name FROM names WHERE first_name LIKE '______%'
+/* Complete the SQL query started in the PREPARE statement. The query must accept a single integer parameter that specifies the number of stars in the first line. The placeholder $1 should be used for this parameter. */
+prepare draw_pattern(int) as
+SELECT REPEAT('*', n) AS star_pattern
+FROM generate_series($1, 1, -1) AS n;
