@@ -125,3 +125,17 @@ name
 You should return all product fields as well as the company name as "company_name". */
 SELECT products.*, companies.name AS company_name from products
 JOIN companies ON products.company_id = companies.id;
+/* Using our monsters table with the following schema:
+monsters table schema
+id
+name
+legs
+arms
+characteristics
+return the following table:
+** output schema**
+name
+characteristics
+Where the name is the original string repeated three times (do not add any spaces), and the characteristics are the original strings in reverse (e.g. 'abc, def, ghi' becomes 'ihg ,fed ,cba').
+*/
+SELECT name, characteristics FROM monsters WHERE characteristics LIKE '%'
