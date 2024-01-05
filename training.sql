@@ -152,10 +152,45 @@ you need to return the same table where all text fields (name & race) are change
 */
 SELECT
   id,
-  BIT_LENGTH(name) * 8 AS name,
-  BIT_LENGTH(race) * 8 AS race,
+  BIT_LENGTH(name) AS name,
+  BIT_LENGTH(race) AS race,
   birthday
 FROM
   demographics;
+/*
+Here's an example of what the data table might look like:
 
+customer_id |    date    | product
+------------+------------+----------
+      1     | 31-08-2023 | Orange
+      1     | 31-08-2023 | Orange
+      3     | 31-08-2023 | Apple
+      1     | 24-09-2023 | Apple
+      4     | 25-09-2023 | Orange
+The result should be:
+
+    date     | num_new_customers |
+-------------+--------------------
+ 31-08-2023  | 2                 |
+ 25-09-2023  | 1                 |
+Resultant query should be ordered by date in ascending order
+
+GLHF!
+*/
+SELECT
+  date,
+  COUNT(DISTINCT customer_id) AS num_new_customers
+FROM (
+  SELECT
+    customer_id,
+    MIN(date) AS date
+  FROM
+    customer_purchases
+  GROUP BY
+    customer_id
+) AS first_purchase
+GROUP BY
+  date
+ORDER BY
+  date;
 
