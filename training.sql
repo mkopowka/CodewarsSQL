@@ -139,3 +139,23 @@ characteristics
 Where the name is the original string repeated three times (do not add any spaces), and the characteristics are the original strings in reverse (e.g. 'abc, def, ghi' becomes 'ihg ,fed ,cba').
 */
 SELECT CONCAT(name, name, name) AS name,  REVERSE(characteristics) AS characteristics FROM monsters
+/*
+Given a demographics table in the following format:
+
+** demographics table schema **
+
+id
+name
+birthday
+race
+you need to return the same table where all text fields (name & race) are changed to the bit length of the string.
+*/
+SELECT
+  id,
+  BIT_LENGTH(name) * 8 AS name,
+  BIT_LENGTH(race) * 8 AS race,
+  birthday
+FROM
+  demographics;
+
+
