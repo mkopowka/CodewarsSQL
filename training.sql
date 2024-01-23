@@ -224,3 +224,5 @@ SELECT
   CASE WHEN SUM(number2) % 2 = 1 THEN MIN(number2) ELSE MAX(number2) END AS number2
 FROM
   numbers;
+/* For this challenge you need to create a simple DISTINCT statement, you want to find all the unique ages. */
+SELECT DISTINCT age FROM people;
