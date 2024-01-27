@@ -246,3 +246,40 @@ custstate	string	50	Tatooine
 custard	string	50	R2-D2
 */
 SELECT custid,custname,custstate FROM customers;
+
+/*
+We have two tables: customers and loans.
+
+customers table:
+
+id (integer): The primary key for the table.
+age (integer): The age of the customer.
+loans table:
+
+id (integer): The primary key for the table.
+customer_id (integer): A foreign key referencing id in the customers table.
+loan_status (string): The status of the loan, either 'paid' or 'unpaid'.
+loan_amount (float): The amount of the loan.
+Write a SQL query that returns a list of all customers who have IDs between 1 and 10. For each customer, the query should return their ID (as customer_id) and their loan eligibility based on the following criteria:
+
+If the customer is 18 to 65 years old (inclusive) and all their loans are paid or they don't have any loans, they should be considered eligible for a loan, and the query should return 'loan can be given'.
+Otherwise, the query should return 'loan cannot be given'.
+The results should be sorted by customer_id in descending order.
+
+GLHF!
+*/
+
+SELECT
+    c.id AS customer_id,
+    CASE
+        WHEN c.age BETWEEN 18 AND 65
+            AND NOT EXISTS (SELECT 1 FROM loans WHERE customer_id = c.id AND loan_status = 'unpaid')
+        THEN 'loan can be given'
+        ELSE 'loan cannot be given'
+    END AS loan_eligibility
+FROM
+    customers c
+WHERE
+    c.id BETWEEN 1 AND 10
+ORDER BY
+    customer_id DESC;
