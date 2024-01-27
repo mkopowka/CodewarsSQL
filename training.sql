@@ -235,4 +235,14 @@ number2
 Return a table with a single column result which is the output of number1 raised to the power of number2.
 */
 SELECT POWER(number1 , number2) AS result FROM decimals;
+/*
+Using only SQL, write a query that returns all rows in the custid, custname, and custstate columns from the customers table.
 
+Table Description for customers:
+Column	Data Type	Size	Sample
+custid	integer	8	4
+custname	string	50	Anakin Skywalker
+custstate	string	50	Tatooine
+custard	string	50	R2-D2
+*/
+SELECT custid,custname,custstate FROM customers;
