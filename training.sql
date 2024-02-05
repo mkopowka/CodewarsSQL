@@ -283,3 +283,22 @@ WHERE
     c.id BETWEEN 1 AND 10
 ORDER BY
     customer_id DESC;
+/* Given a demographics table in the following format:
+
+** demographics table schema **
+
+id
+name
+birthday
+race
+you need to return a table that shows a count of each race represented, ordered by the count in descending order as:
+
+** output table schema **
+
+race
+count
+*/
+SELECT race, COUNT(*) AS count
+FROM demographics
+GROUP BY race
+ORDER BY count DESC;
