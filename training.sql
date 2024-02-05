@@ -310,7 +310,7 @@ You have to find out how many different type of products you buy from each produ
 In the results show producer and count_products_types which you buy from him.
 
 Order the result by count_products_types (DESC) then by producer (ASC) in case there are duplicate amounts,
-
+*/
 products table schema
 id
 name
@@ -320,4 +320,33 @@ producer
 results table schema
 count_products_types
 producer
+/*
+Given a table of random numbers as follows:
+
+** numbers table schema **
+
+id
+number1
+number2
+number3
+number4
+number5
+Your job is to return a table in the following format, where each value is the number of bytes in the string representation of the number.
+
+** output table schema **
+
+octnum1
+octnum2
+octnum3
+octnum4
+octnum5
+See expected results for more clarity if required.
+
 */
+ SELECT
+  OCTET_LENGTH(CAST(number1 AS CHAR)) AS octnum1,
+  OCTET_LENGTH(CAST(number2 AS CHAR)) AS octnum2,
+  OCTET_LENGTH(CAST(number3 AS CHAR)) AS octnum3,
+  OCTET_LENGTH(CAST(number4 AS CHAR)) AS octnum4,
+  OCTET_LENGTH(CAST(number5 AS CHAR)) AS octnum5
+FROM numbers;
