@@ -363,3 +363,9 @@ SELECT
   ABS(number1) AS abs,
   LOG(64,number2) AS log
 FROM decimals;
+/*  Write function RemoveExclamationMarks which removes all exclamation marks from a given string. */
+SELECT 
+    s,
+    REPLACE(s, '!', '') AS res
+FROM 
+    removeexclamationmarks;
