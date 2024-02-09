@@ -1,1 +1,1 @@
-# CodewarsSQL
+# Codewars SQL tasks 
